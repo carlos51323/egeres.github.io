@@ -46,11 +46,11 @@ ul.posts li {
 
 
 
-#wrap {
+.galeria {
   width: 1020px;
   margin: 0 auto;
 }
-li {
+.galeria li {
   float:left;
   position:relative;
   display:inline-block;
@@ -61,7 +61,7 @@ li {
   background:#fff;
   box-shadow:0 0 5px rgba(0,0,0,.35);
 }
-li div {
+.galeria li div {
   position:absolute;
   height:0;
   width:280px;
@@ -74,6 +74,6 @@ li div {
   color:#fff;
   transition:height 1s;
 }
-li:hover div {
+.galeria li:hover div {
   height:50px;
 }
