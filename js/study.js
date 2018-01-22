@@ -67,7 +67,7 @@ var this_create;
 var text3;
 
 lista_dialogos = [
-  "",
+  "...",
   "Hi, I'm death !",
   "Well...",
   "Hello there !",
@@ -127,7 +127,7 @@ lista_dialogos = [
 int_dialogos = 0;
 
 $(document).bind('keydown', 'space', function () { next_dialog(); });
-
+// $(document).tap(function(){ next_dialog(); });
 
 
 
@@ -136,16 +136,25 @@ $(document).bind('keydown', 'space', function () { next_dialog(); });
 
 
 function next_dialog() {
-  text3.setText(lista_dialogos[int_dialogos]);
-  int_dialogos++;
+  if (typeof text3 !== 'undefined') {
+    text3.setText(lista_dialogos[int_dialogos]);
+    int_dialogos++;
+  }
 }
 
 function preload () {
   this.load.spritesheet('skeleton', 'img/study_please/Skeleton Idle.png', { frameWidth: 24, frameHeight: 32, endFrame: 11 });
   this.load.image('room_background_0', 'img/study_please/room_background_0.png');
+  this.load.image('alpha', 'img/study_please/alpha_fullscreen.png');
 }
 
 function create () {
+
+  // this.actionButton = this.add.button(this.game.width, this.game.height, 'actionButton');
+  // this.actionButton.events.onInputDown.add(function(){
+  //   next_dialog();
+  // }, this);
+
   this_create = this;
 
   // background of the room
@@ -159,6 +168,19 @@ function create () {
   obj_char_0.anims.play('skeleton_0');
 
   text3 = this.add.text(9, 9, lista_dialogos[int_dialogos]).setFont('14px Arial').setFill('#c9c28f');
+
+  alpha_channel  = this.add.sprite(0, 0, 'alpha', 4).setOrigin(0,0).setName("alphis");
+  alpha_channel.setInteractive();
+
+
+  this.input.events.on('POINTER_DOWN_EVENT', function (event) {
+    if (event.gameObject) {
+      if (event.gameObject.name == "alphis") {
+        next_dialog();
+      }
+    }
+  });
+
 }
 
 function update (time, delta)
