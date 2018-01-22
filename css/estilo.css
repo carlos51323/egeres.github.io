@@ -1,0 +1,188 @@
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #FFCC00;
+}
+
+img {
+  /* image-rendering: pixelated; */
+  image-rendering: optimizeSpeed;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -o-crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: optimize-contrast;
+  -ms-interpolation-mode: nearest-neighbor;
+}
+canvas {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table {
+  border-spacing:0px;
+}
+
+h1 {
+  font-family: 'pixelated';
+}
+
+h3 {
+  color: #e0e0e0;
+  font-size: 15px;
+  font-family: 'small_pixie';
+  margin:3px;
+}
+
+
+
+
+.perfect-fit-outer {
+    display: table;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.perfect-fit-middle {
+    display: table-cell;
+    vertical-align: middle;
+    align-items: middle;
+}
+
+.perfect-fit-inner {
+    margin-left: auto;
+    margin-right: auto;
+    /* width: 400px; /*whatever width you want*/ */
+}
+
+
+.study-please-menu-0 {
+  /* margin-left: auto; */
+  /* margin-right: auto; */
+  /* background-color: #241c16; */
+  position: absolute;
+  width: 60%;
+
+  left: -100%;
+  -webkit-transition: left 0.2s ease-in;
+  transition: left 0.2s ease-in;
+}
+.study-please-menu-0.on {
+  left: 0px !important;
+  width: 60%;
+  left: -90%;
+
+  /* left: 0px !important; */
+  /* margin-left: auto;
+  margin-right: auto; */
+}
+
+/* .slide-in {
+	background-color: #2d4b5a;
+	width: 80%;
+	position: absolute;
+	top: 0;
+	left: -80%;
+	-webkit-transition: left 0.2s ease-in;
+	transition: left 0.2s ease-in;
+}
+.slide-in.on {
+	left: 0px !important;
+} */
+
+
+
+
+
+.contenedor-general {
+   margin-left: 5%;
+   margin-right: 5%;
+   margin-bottom: 5%;
+}
+.center-div{
+  position: absolute;
+  width: 100px;
+  height: 200px;
+  z-index: 15;
+  top: 50%;
+  left: 50%;
+  margin: -100px 0 0 -50px;
+  text-align: center;
+}
+
+
+
+.slide-in {
+	background-color: #2d4b5a;
+	width: 80%;
+  height:10px;
+	position: absolute;
+  padding: 0px;
+	/* top: 0; */
+	left: -80%;
+	-webkit-transition: left 0.2s ease-in;
+	transition: left 0.2s ease-in;
+}
+.slide-in.on {
+	left: 0px !important;
+}
+
+
+
+.button_0 {
+  pointer-events: auto;
+	background-color:#202020;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:12px 24px;
+	text-decoration:none;
+
+  /* -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+     -moz-user-select: none; /* Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+          user-select: none; /* Non-prefixed version, currently */
+}
+.button_0.off {
+  visibility: hidden;
+  pointer-events: none;
+}
+.button_0:active {
+  background-color:#202020;
+	position:relative;
+  color:#ffffff;
+  transform: translateY(4px);
+}
+
+
+
+
+@font-face {
+  font-family: 'pixelated';
+  src: url('../font/PixelSquare10.ttf') format('truetype'),
+       url('../font/PixelSquare10.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'small_pixie';
+  src: url('../font/smallest_pixel-7.ttf') format('truetype');
+}
+
+
+
+
+
+
+
+
+
+/* :D */
