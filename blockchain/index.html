@@ -23,28 +23,21 @@
 
   <body style="background-color:#ffffff">
 
-    <!--
-    <div class="stripped1"></div>
-    <script src="js/waves.js"></script>
-    <div id="fondo_animado" style="height: 100%;">
-    -->
+
+
 
     <div class="parent">
 
+
       <div class="diapositiva" style="background-image: url('img/fondo_0.svg');background-size: cover;">
-      <!-- <div class="diapositiva" style="background-color:#000"> -->
         <div class="v-odka"><div class="v-wrap"><div class="v-box" style="color:#FFF;">
-          <h1>What is a blockchain ?</h1>
+          <h1>Understanding the blockchain...</h1>
         </div></div></div>
       </div>
 
       <div class="diapositiva" style="background-image: url('img/fondo_1.svg');background-size: cover;">
-        <!-- <div id="penepolis" style="width:90%;height:30%"></div> -->
-
         <div class="v-odka">
           <div class="v-wrap"><div class="v-box" style="color:#FFF;">
-            <!-- <div style="width:100%" id="penepolis"></div> -->
-            <!-- <h1>Gamedev is fun</h1> -->
             <p>aljnskansdna sdlkasdk nkasnd kjan sdkjansdkjnas dknas</p>
         </div></div></div>
       </div>
@@ -62,120 +55,11 @@
       </div>
 
 
-
     </div>
 
-    <script type="text/javascript">
 
-      var limit  = $('.diapositiva').length - 1;
-      var indice = 0;
-      var slides = document.getElementsByClassName("diapositiva");
+    <script src="js/presentacion_handler.js"></script>
 
-      for(var i = 0; i < slides.length; i++)
-      {
-        slides[i].id = "diapo_" + i.toString();
-        limit  = slides.lenght;
-      }
-
-      var big_dictionary = {};
-      var lista_ids_usadas = [];
-
-      for(var i = 0; i < slides.length; i++)
-      {
-        big_dictionary[i] = {};
-        $('#'+"diapo_"+i.toString() + " > div > div > div").children().each(function (index) {
-          var nombre_elemento = "diapo_"+i.toString()+"_"+index.toString();
-          this.id = nombre_elemento;
-          big_dictionary[i][index] =  $(this).html();
-          $(this).text("");
-        });
-      }
-
-      function avanti() {
-        if (indice < ($('.diapositiva').length)) {indice++;}
-        var the_id = "#diapo_" + indice.toString()
-        $('html, body').animate({ scrollTop:$(the_id).offset().top }, 'slow');
-        escribir_texto_id(indice);
-      }
-
-      function retrospecti() {
-        if (indice > 0) {indice--;}
-        var the_id = "#diapo_" + indice.toString()
-        $('html, body').animate({ scrollTop:$(the_id).offset().top }, 'slow');
-      }
-
-      function escribir_texto_id(id_input) {
-
-       console.log( id_input + " in " + lista_ids_usadas + "   ----   " + $.inArray(lista_ids_usadas, id_input));
-
-        if (($.inArray(id_input, lista_ids_usadas) >  -1) === false)
-        {
-
-          for (var i = Object.keys(big_dictionary[id_input]).length - 1; i >= 0; i--)
-          {
-            var texto = big_dictionary[id_input][i];
-            var selector = "#" + "diapo_"+id_input.toString()+"_"+i.toString();
-            var tipo_elemento = $(selector).prop('nodeName')
-            $(selector).append( "<"+tipo_elemento+"></"+tipo_elemento+">" );
-
-            console.log(tipo_elemento);
-
-            if (tipo_elemento == "H1") {
-              //console.log("cada de vaca");
-              setTimeout(function(){ $(selector+" > "+tipo_elemento).typed({ strings: [texto], typeSpeed: 130 }); }, 500);
-              //$(selector+" > "+tipo_elemento).typed({ strings: [texto], typeSpeed: 130 });
-            }
-            else {
-              //console.log("cadenas");
-              //setTimeout(function(){ $(selector+" > "+tipo_elemento).typed({ strings: [texto], typeSpeed: 0 }); }, 500);
-              $(selector+" > "+tipo_elemento).typed({ strings: [texto], typeSpeed: 0 });
-            }
-
-
-          };
-
-          lista_ids_usadas.push(id_input);
-
-        }
-      }
-
-      $('.diapositiva').click(function (event) {
-          event.preventDefault();
-
-          if ( $(this).data('dblclicked') ) {
-            retrospecti();
-            clearTimeout( $(this).data('clicked') );
-            $(this).data('dblclicked', false);
-          }
-          else {
-            var self = this;
-            $(this).data('dblclicked', true).data('clicked', setTimeout(function() {
-                avanti();
-                $(self).data('dblclicked', false);
-            },300));
-          }
-      });
-
-      // a ejecutar al principio, cuando las cosas hayan cargado
-      document.addEventListener('DOMContentLoaded', function()
-      {
-        $('html, body').animate({ scrollTop:$("#diapo_" + indice.toString()).offset().top }, 'slow');
-        escribir_texto_id(0);
-      }, false);
-
-    </script>
-
-    <!-- <script src="js/graphd3_example_2.js"></script> -->
-    <!-- <script src="js/background_ejemplos_three_2.js"></script> -->
-
-    <!--
-
-      <script src="js/webgl_part.js"></script>
-      <script src="js/threejs_sea_of_particles.js"></script>
-      <script src="js/ejemplos_three_1.js"></script>
-      <script src="js/shapes.js"></script>
-
-    -->
 
 
   </body>

@@ -82,7 +82,8 @@ h1 {
   font-size: 120px;
   font-family: moon;
   display:inline;
-  line-height: 0px;
+  /* line-height: 0px; */
+  /* el line height hace ue esté en una o 2 líneas */
 
   -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
