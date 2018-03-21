@@ -59,7 +59,52 @@ function escribir_texto_id(id_input) {
       else {
         //console.log("cadenas");
         //setTimeout(function(){ $(selector+" > "+tipo_elemento).typed({ strings: [texto], typeSpeed: 0 }); }, 500);
-        $(selector+" > "+tipo_elemento).typed({ strings: [texto], typeSpeed: 0 });
+
+        console.log()
+
+        $(selector).each(function () {
+
+
+          if ($(this).attr('class') == "fade") {
+            $(this).text(texto);
+            $(this).css('opacity', '0');
+            var outer_this = this;
+            setTimeout(function() { $(outer_this).fadeTo( 1000 , 1.0, function() {});  }, 300)
+          }
+
+          else {
+            $(this).typed({ strings: [texto], typeSpeed: 0 });
+          }
+
+        });
+
+        // $(selector+" > "+tipo_elemento).each(function() {
+          // $( this ).addClass( "foo" );
+
+          // console.log("class is " + $(this).text );
+          // console.log($(this).attr('class'));
+          // $( this ).html("penis");
+
+          // if ($( this ).is( "fade" )) {
+            // console.log("fbdnbisahiusdfn i")
+          // }
+          // else {
+            // console.log("fich");
+            // $(selector+" > "+tipo_elemento).typed({ strings: [texto], typeSpeed: 0 });
+          // }
+
+        // });
+
+        // if ($(selector+" > "+tipo_elemento).is( "fade" )) {
+        //   console.log("fbdnbisahiusdfn i")
+        // }
+        // else {
+        //   console.log("fich");
+        //   $(selector+" > "+tipo_elemento).typed({ strings: [texto], typeSpeed: 0 });
+        // }
+
+
+
       }
 
 

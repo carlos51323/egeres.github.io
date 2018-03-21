@@ -37,9 +37,11 @@ span {
 }
 
 p {
-  color: #FFF;
+  /* color: #FFF; */
+  color:#0066ff;
   font-size: 40px;
-  font-family: arial;
+  /* font-family: arial; */
+  font-family: moon;
 
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
