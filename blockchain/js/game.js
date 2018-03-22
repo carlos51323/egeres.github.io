@@ -1,5 +1,9 @@
 
 
+
+
+score_id = "#diapo_0_0";
+
 config = {
   type:     Phaser.WEBGL,
   width:    1000,
@@ -17,6 +21,10 @@ config = {
 };
 
 var listaca = [];
+var the_static;
+var this_create;
+var current_color = "";
+var puntos = 0;
 
 function preload () {
   this.load.image('valid', 'img/valid.png');
@@ -26,11 +34,14 @@ function preload () {
   this.load.image('block_green', 'img/block_green.png');
   this.load.image('block_black', 'img/block_black.png');
   this.load.image('block_blue', 'img/block_blue.png');
+  $(score_id).get(0).style.setProperty("text-align", "center");
 }
 
 function create ()
 {
-  var this_create = this;
+
+
+  this_create = this;
 
   // var listaca = [];
 
@@ -52,12 +63,30 @@ function create ()
 
   // add_object();
 
-  var zone_invalid = this.add.image(300, 130, 'invalid').setInteractive();
-  zone_invalid.input.dropZone = true;
+  // the_static = this.add.image(120, 250, 'block_blue');
+
+  // current_color =
+
+  var type_of_block = Math.floor(Math.random() * 5);
+
+  if (type_of_block == 0) { current_color = "pink";the_static = this.add.image(120, 250, 'block_pink'); }
+  if (type_of_block == 1) { current_color = "yellow";the_static = this.add.image(120, 250, 'block_yellow'); }
+  if (type_of_block == 2) { current_color = "green";the_static = this.add.image(120, 250, 'block_green'); }
+  if (type_of_block == 3) { current_color = "black";the_static = this.add.image(120, 250, 'block_black'); }
+  if (type_of_block == 4) { current_color = "blue";the_static = this.add.image(120, 250, 'block_blue'); }
+
+
+
+
+
 
   var zone_valid = this.add.image(300, 370, 'valid').setInteractive();
   zone_valid.input.dropZone = true;
+  zone_valid["zona"] = "valida";
 
+  var zone_invalid = this.add.image(300, 130, 'invalid').setInteractive();
+  zone_invalid.input.dropZone = true;
+  zone_invalid["zona"] = "invalida";
 
   this.input.on('dragstart', function (pointer, gameObject) {
       this.children.bringToTop(gameObject);
@@ -80,6 +109,35 @@ function create ()
     gameObject.x = dropZone.x;
     gameObject.y = dropZone.y;
     // gameObject.setScale(0.2);
+    console.log(gameObject["color_block"]);
+    console.log(dropZone["zona"]);
+    console.log(current_color);
+
+    if (dropZone["zona"] == "valida") {
+      if (gameObject["color_block"] == current_color) {
+        puntos += 100;
+      }
+      else {
+        puntos -= 50;
+      }
+    }
+
+    if (dropZone["zona"] == "invalida") {
+      if (gameObject["color_block"] != current_color) {
+        puntos += 10;
+      }
+      else {
+        puntos -= 10;
+      }
+    }
+
+    if (puntos < 0) {
+      // game = new Phaser.Game(config);
+    }
+    console.log(puntos);
+
+    $(score_id).text("Score :"+puntos);
+
     gameObject.destroy();
     // gameObject.input.enabled = false;
     // zone_valid.clearTint();
@@ -107,32 +165,37 @@ function update (time, delta)
     listaca[i].x -= 1;
   }
 
-  counter++;
-
-  if (counter % 100 == 0) {
+  if (counter % 200 == 0) {
     var positiony = 50 + Math.floor(Math.random() * 300);
 
     var type_of_block = Math.floor(Math.random() * 5);
 
     if (type_of_block == 0) {
-      var image = this.add.image(850, positiony, 'block_pink');
+      var image = this.add.image(1250, positiony, 'block_pink');
+      image["color_block"] = "pink";
     }
     if (type_of_block == 1) {
-      var image = this.add.image(850, positiony, 'block_yellow');
+      var image = this.add.image(1250, positiony, 'block_yellow');
+      image["color_block"] = "yellow";
     }
     if (type_of_block == 2) {
-      var image = this.add.image(850, positiony, 'block_green');
+      var image = this.add.image(1250, positiony, 'block_green');
+      image["color_block"] = "green";
     }
     if (type_of_block == 3) {
-      var image = this.add.image(850, positiony, 'block_black');
+      var image = this.add.image(1250, positiony, 'block_black');
+      image["color_block"] = "black";
     }
     if (type_of_block == 4) {
-      var image = this.add.image(850, positiony, 'block_blue');
+      var image = this.add.image(1250, positiony, 'block_blue');
+      image["color_block"] = "blue";
     }
 
     image.setInteractive();
     this.input.setDraggable(image);
     listaca.push(image);
   }
+
+  counter++;
 
 }

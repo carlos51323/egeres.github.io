@@ -123,7 +123,8 @@ function escribir_texto_id(id_input) {
 
           if ($(this).attr('class') == "fade") {
             $(this).text(texto);
-            $(this).css('opacity', '0');
+            // $(this).css('opacity', '0');
+            $(this).get(0).style.setProperty("opacity", "0");
             var outer_this = this;
             setTimeout(function() { $(outer_this).fadeTo( 1000 , 1.0, function() {});  }, 300)
           }
