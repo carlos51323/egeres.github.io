@@ -43,6 +43,19 @@ function retrospecti() {
   $('html, body').animate({ scrollTop:$(the_id).offset().top }, 'slow');
 }
 
+
+
+
+
+String.prototype.replaceAll = function(search, replacement) {
+    var target = this;
+    return target.replace(new RegExp(search, 'g'), replacement);
+};
+
+
+
+
+
 function escribir_texto_id(id_input) {
 
  console.log( id_input + " in " + lista_ids_usadas + "   ----   " + $.inArray(lista_ids_usadas, id_input));
@@ -64,6 +77,8 @@ function escribir_texto_id(id_input) {
         // setTimeout(function(){ $(selector+" > "+tipo_elemento).typed({
         //   strings: [texto], typeSpeed: 50 }); }, 500);
 
+
+
         // diapo_3_1
         // contentDocument
         // $(selector+" > "+tipo_elemento).parent().addClass("empieza");
@@ -75,18 +90,44 @@ function escribir_texto_id(id_input) {
           // document.getElementById($(this).id).src = "img/crypto_animated.svg";
 
         // });
-        selector = selector.slice(1);
+        var local_selector = selector.slice(1);
+        // console.log("src = " + document.getElementById(selector).src);
+        // document.getElementById(selector).src = "img/crypto_animated.svg";
 
-        console.log(selector);
-        document.getElementById(selector).src = "img/crypto_animated.svg";
+        // document.getElementById(selector).src = "img/crypto.svg";
+        // document.getElementById(selector).src = "img/crypto_animated.svg";
 
-        $("#diapo_3 img").each(function() {
+        var amigdala = document.getElementById(local_selector).src.split('.');
+        amigdala.splice(1, 0, "_animated.");
+        amigdala = amigdala.join();
+        amigdala = amigdala.replaceAll(",", "");
+        // console.log(amigdala);
+
+        // console.log("src = " + document.getElementById(selector).src);
+
+
+        // console.log((document.getElementById(selector).src.split('.')).splice(0, 0, "_animated"));
+        // console.log(document.getElementById(selector).src.split('.').splice(1, 0, "_animated").join());
+
+        // var string_of_new_scr = document.getElementById(selector).src.split('.').splice(0, 0, "_animated").join();
+
+        // console.log(string_of_new_scr);
+
+        // document.getElementById(selector).src = "img/crypto_animated.svg";
+
+
+        setTimeout(function() {
+          console.log("fuckssss");
+          document.getElementById(local_selector).src = amigdala;
+        }, 100);
+
+        // $("#diapo_3 img").each(function() {
 
           // console.log(this.id);
           // document.getElementById(this.id).src = "img/crypto_animated.svg";
 
 
-        });
+        // });
 
         //
 
