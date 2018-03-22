@@ -5,7 +5,7 @@ var slides = document.getElementsByClassName("diapositiva");
 for(var i = 0; i < slides.length; i++)
 {
   slides[i].id = "diapo_" + i.toString();
-  limit  = slides.lenght;
+  limit  = slides.length;
 }
 
 var big_dictionary = {};
@@ -82,14 +82,54 @@ function escribir_texto_id(id_input) {
 
         var local_selector = selector.slice(1);
 
+        // www.egeres.github.io/tal/casa.svg
+        // sssss.asas
+
         var amigdala = document.getElementById(local_selector).src.split('.');
-        amigdala.splice(1, 0, "_animated.");
+
+        // console.log("0 amigdala = " + amigdala);
+
+        var iiiii = 0;
+        while(iiiii <= amigdala.length) {
+
+          if (iiiii <= (amigdala.length-2)) {
+            amigdala.splice(iiiii, 0, ".");
+          }
+          else {
+            amigdala.splice(iiiii, 0, "_animated.");
+          }
+          iiiii += 2;
+
+        }
+
+        // for (var i = amigdala.length; i > 0; i--)
+        // {
+        //   if (i < amigdala.length - 1) {
+        //     amigdala.splice(i+1, 0, "_animated.");
+        //   }
+        //   else {
+        //     amigdala.splice(i+1, 0, "_animated.");
+        //   }
+        // }
+
+        // console.log("1 amigdala = " + amigdala);
+
+        amigdala = amigdala.slice(1, amigdala.length-1);
+
+        // amigdala.splice(amigdala.length-1, 0, "_animated.");
         amigdala = amigdala.join();
+
+        // console.log("2 amigdala = " + amigdala);
+
+        // console.log("3 amigdala = " + amigdala);
+
         amigdala = amigdala.replaceAll(",", "");
 
-        // console.log("amigdala = " + amigdala);
+        // console.log("4 amigdala = " + amigdala);
 
         document.getElementById(local_selector).src = amigdala;
+
+        // console.log("5 amigdala = " + amigdala);
 
 
 
