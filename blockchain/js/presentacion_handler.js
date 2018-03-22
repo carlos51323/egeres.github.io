@@ -58,7 +58,11 @@ String.prototype.replaceAll = function(search, replacement) {
 
 function escribir_texto_id(id_input) {
 
- console.log( id_input + " in " + lista_ids_usadas + "   ----   " + $.inArray(lista_ids_usadas, id_input));
+  console.log( id_input + " in " + lista_ids_usadas + "   ----   " + $.inArray(lista_ids_usadas, id_input));
+
+  if (id_input == 0) {
+    game = new Phaser.Game(config);
+  }
 
   if (($.inArray(id_input, lista_ids_usadas) >  -1) === false)
   {

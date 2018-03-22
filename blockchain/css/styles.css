@@ -29,11 +29,20 @@ body {
   z-index: -1000;
 }
 
+img {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
 p p {
     display:inline;
 }
 span {
     display:inline;
+}
+canvas {
+  display:block;
+  position: static;
 }
 
 p {
@@ -143,10 +152,7 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAHUlEQVQYlW
   background-size: 13px 13px;
 }
 
-canvas {
-  position: absolute;
-  /* z-index: -100; */
-}
+
 
 svg {
   /* position: absolute; */
