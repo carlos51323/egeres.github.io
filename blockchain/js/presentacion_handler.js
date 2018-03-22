@@ -74,62 +74,26 @@ function escribir_texto_id(id_input) {
 
 
       if (tipo_elemento == "IMG") {
-        // setTimeout(function(){ $(selector+" > "+tipo_elemento).typed({
-        //   strings: [texto], typeSpeed: 50 }); }, 500);
 
-
-
-        // diapo_3_1
-        // contentDocument
-        // $(selector+" > "+tipo_elemento).parent().addClass("empieza");
-
-        // $(selector+" img").each(function () {
-          // $(this).addClass("empieza");
-
-          // document.getElementById($(this).id).src = document.getElementById($(this).id).src;
-          // document.getElementById($(this).id).src = "img/crypto_animated.svg";
-
-        // });
         var local_selector = selector.slice(1);
-        // console.log("src = " + document.getElementById(selector).src);
-        // document.getElementById(selector).src = "img/crypto_animated.svg";
-
-        // document.getElementById(selector).src = "img/crypto.svg";
-        // document.getElementById(selector).src = "img/crypto_animated.svg";
 
         var amigdala = document.getElementById(local_selector).src.split('.');
         amigdala.splice(1, 0, "_animated.");
         amigdala = amigdala.join();
         amigdala = amigdala.replaceAll(",", "");
-        // console.log(amigdala);
 
-        // console.log("src = " + document.getElementById(selector).src);
+        console.log("amigdala = " + amigdala);
 
-
-        // console.log((document.getElementById(selector).src.split('.')).splice(0, 0, "_animated"));
-        // console.log(document.getElementById(selector).src.split('.').splice(1, 0, "_animated").join());
-
-        // var string_of_new_scr = document.getElementById(selector).src.split('.').splice(0, 0, "_animated").join();
-
-        // console.log(string_of_new_scr);
-
-        // document.getElementById(selector).src = "img/crypto_animated.svg";
+        document.getElementById(local_selector).src = amigdala;
 
 
-        setTimeout(function() {
-          console.log("fuckssss");
-          document.getElementById(local_selector).src = amigdala;
-        }, 100);
 
-        // $("#diapo_3 img").each(function() {
-
-          // console.log(this.id);
-          // document.getElementById(this.id).src = "img/crypto_animated.svg";
+        // setTimeout(function() {
+        //   console.log("fuckssss");
+        //   document.getElementById(local_selector).src = amigdala;
+        // }, 100);
 
 
-        // });
-
-        //
 
       }
 
