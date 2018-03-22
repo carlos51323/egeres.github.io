@@ -67,6 +67,29 @@ function escribir_texto_id(id_input) {
         // diapo_3_1
         // contentDocument
         // $(selector+" > "+tipo_elemento).parent().addClass("empieza");
+
+        // $(selector+" img").each(function () {
+          // $(this).addClass("empieza");
+
+          // document.getElementById($(this).id).src = document.getElementById($(this).id).src;
+          // document.getElementById($(this).id).src = "img/crypto_animated.svg";
+
+        // });
+        selector = selector.slice(1);
+
+        console.log(selector);
+        document.getElementById(selector).src = "img/crypto_animated.svg";
+
+        $("#diapo_3 img").each(function() {
+
+          // console.log(this.id);
+          // document.getElementById(this.id).src = "img/crypto_animated.svg";
+
+
+        });
+
+        //
+
       }
 
       if (tipo_elemento == "svg") {
