@@ -23,10 +23,18 @@ for(var i = 0; i < slides.length; i++)
 }
 
 function avanti() {
-  if (indice < ($('.diapositiva').length)) {indice++;}
-  var the_id = "#diapo_" + indice.toString()
-  $('html, body').animate({ scrollTop:$(the_id).offset().top }, 'slow');
-  escribir_texto_id(indice);
+
+  console.log("indice = " + indice + " lenght = " + $('.diapositiva').length);
+
+  if (indice < ($('.diapositiva').length - 1)) {
+
+    indice++;
+    var the_id = "#diapo_" + indice.toString()
+    $('html, body').animate({ scrollTop:$(the_id).offset().top }, 'slow');
+    escribir_texto_id(indice);
+
+  }
+
 }
 
 function retrospecti() {
@@ -52,19 +60,27 @@ function escribir_texto_id(id_input) {
       console.log(tipo_elemento);
 
 
-      if (tipo_elemento == "img") {
+      if (tipo_elemento == "IMG") {
         // setTimeout(function(){ $(selector+" > "+tipo_elemento).typed({
         //   strings: [texto], typeSpeed: 50 }); }, 500);
 
-        $(selector+" > "+tipo_elemento).addClass("start");
+        // diapo_3_1
+        // contentDocument
+        // $(selector+" > "+tipo_elemento).parent().addClass("empieza");
       }
 
+      if (tipo_elemento == "svg") {
+        // $(selector+" > "+tipo_elemento).parent().addClass("empieza");
+      }
+      if (tipo_elemento == "SVG") {
+        // $(selector+" > "+tipo_elemento).parent().addClass("empieza");
+      }
       if (tipo_elemento == "H1") {
         //console.log("cada de vaca");
         setTimeout(function(){ $(selector+" > "+tipo_elemento).typed({ strings: [texto], typeSpeed: 50 }); }, 500);
         //$(selector+" > "+tipo_elemento).typed({ strings: [texto], typeSpeed: 130 });
       }
-      else {
+      else if (tipo_elemento == "P") {
         //console.log("cadenas");
         //setTimeout(function(){ $(selector+" > "+tipo_elemento).typed({ strings: [texto], typeSpeed: 0 }); }, 500);
 
