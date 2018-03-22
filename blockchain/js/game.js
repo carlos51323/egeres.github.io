@@ -3,6 +3,7 @@
 
 
 score_id = "#diapo_7_0";
+score_id2 = "#diapo_7_0";
 
 config = {
   type:     Phaser.WEBGL,
