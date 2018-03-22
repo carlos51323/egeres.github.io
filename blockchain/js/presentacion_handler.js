@@ -51,6 +51,14 @@ function escribir_texto_id(id_input) {
 
       console.log(tipo_elemento);
 
+
+      if (tipo_elemento == "img") {
+        // setTimeout(function(){ $(selector+" > "+tipo_elemento).typed({
+        //   strings: [texto], typeSpeed: 50 }); }, 500);
+
+        $(selector+" > "+tipo_elemento).addClass("start");
+      }
+
       if (tipo_elemento == "H1") {
         //console.log("cada de vaca");
         setTimeout(function(){ $(selector+" > "+tipo_elemento).typed({ strings: [texto], typeSpeed: 50 }); }, 500);
