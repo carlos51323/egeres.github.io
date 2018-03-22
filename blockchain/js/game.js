@@ -2,7 +2,7 @@
 
 
 
-score_id = "#diapo_0_0";
+score_id = "#diapo_6_0";
 
 config = {
   type:     Phaser.WEBGL,
@@ -109,9 +109,9 @@ function create ()
     gameObject.x = dropZone.x;
     gameObject.y = dropZone.y;
     // gameObject.setScale(0.2);
-    console.log(gameObject["color_block"]);
-    console.log(dropZone["zona"]);
-    console.log(current_color);
+    // console.log(gameObject["color_block"]);
+    // console.log(dropZone["zona"]);
+    // console.log(current_color);
 
     if (dropZone["zona"] == "valida") {
       if (gameObject["color_block"] == current_color) {
@@ -131,10 +131,20 @@ function create ()
       }
     }
 
+    var type_of_block = Math.floor(Math.random() * 5);
+
+    if (type_of_block == 0) { current_color = "pink";the_static = this_create.add.image(120, 250, 'block_pink'); }
+    if (type_of_block == 1) { current_color = "yellow";the_static = this_create.add.image(120, 250, 'block_yellow'); }
+    if (type_of_block == 2) { current_color = "green";the_static = this_create.add.image(120, 250, 'block_green'); }
+    if (type_of_block == 3) { current_color = "black";the_static = this_create.add.image(120, 250, 'block_black'); }
+    if (type_of_block == 4) { current_color = "blue";the_static = this_create.add.image(120, 250, 'block_blue'); }
+
+
     if (puntos < 0) {
       // game = new Phaser.Game(config);
+      console.log("you've lost");
     }
-    console.log(puntos);
+    // console.log(puntos);
 
     $(score_id).text("Score :"+puntos);
 
@@ -165,8 +175,8 @@ function update (time, delta)
     listaca[i].x -= 1;
   }
 
-  if (counter % 200 == 0) {
-    var positiony = 50 + Math.floor(Math.random() * 300);
+  if (counter % 150 == 0) {
+    var positiony = 30 + Math.floor(Math.random() * 370);
 
     var type_of_block = Math.floor(Math.random() * 5);
 

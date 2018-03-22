@@ -24,7 +24,7 @@ for(var i = 0; i < slides.length; i++)
 
 function avanti() {
 
-  console.log("indice = " + indice + " lenght = " + $('.diapositiva').length);
+  // console.log("indice = " + indice + " lenght = " + $('.diapositiva').length);
 
   if (indice < ($('.diapositiva').length - 1)) {
 
@@ -58,9 +58,9 @@ String.prototype.replaceAll = function(search, replacement) {
 
 function escribir_texto_id(id_input) {
 
-  console.log( id_input + " in " + lista_ids_usadas + "   ----   " + $.inArray(lista_ids_usadas, id_input));
+  // console.log( id_input + " in " + lista_ids_usadas + "   ----   " + $.inArray(lista_ids_usadas, id_input));
 
-  if (id_input == 0) {
+  if (id_input == 6) {
     game = new Phaser.Game(config);
   }
 
@@ -74,7 +74,7 @@ function escribir_texto_id(id_input) {
       var tipo_elemento = $(selector).prop('nodeName')
       $(selector).append( "<"+tipo_elemento+"></"+tipo_elemento+">" );
 
-      console.log(tipo_elemento);
+      // console.log(tipo_elemento);
 
 
       if (tipo_elemento == "IMG") {
@@ -86,7 +86,7 @@ function escribir_texto_id(id_input) {
         amigdala = amigdala.join();
         amigdala = amigdala.replaceAll(",", "");
 
-        console.log("amigdala = " + amigdala);
+        // console.log("amigdala = " + amigdala);
 
         document.getElementById(local_selector).src = amigdala;
 
@@ -116,7 +116,7 @@ function escribir_texto_id(id_input) {
         //console.log("cadenas");
         //setTimeout(function(){ $(selector+" > "+tipo_elemento).typed({ strings: [texto], typeSpeed: 0 }); }, 500);
 
-        console.log()
+        // console.log()
 
         $(selector).each(function () {
 
