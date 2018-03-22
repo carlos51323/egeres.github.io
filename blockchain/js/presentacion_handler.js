@@ -10,6 +10,7 @@ for(var i = 0; i < slides.length; i++)
 
 var big_dictionary = {};
 var lista_ids_usadas = [];
+var game = "nuthing";
 
 for(var i = 0; i < slides.length; i++)
 {
@@ -60,7 +61,7 @@ function escribir_texto_id(id_input) {
 
   // console.log( id_input + " in " + lista_ids_usadas + "   ----   " + $.inArray(lista_ids_usadas, id_input));
 
-  if (id_input == 6) {
+  if (id_input == 6 && game == "nuthing") {
     game = new Phaser.Game(config);
   }
 
