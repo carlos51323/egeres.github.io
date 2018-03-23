@@ -1,0 +1,39 @@
+@font-face {
+  font-family: "moon";
+  src: url('../fonts/Moon Bold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: "porto";
+  src: url('../fonts/Porto 400.ttf') format('truetype');
+  /* src: url('../fonts/Anonymous Pro.ttf') format('truetype'); */
+  /* src: url('../fonts/Moon Bold.otf') format('opentype'); */
+
+}
+
+@font-face {
+  font-family: "napo";
+  src: url('../fonts/Napo-Regular_TRIAL.ttf') format('truetype');
+  /* src: url('../fonts/Anonymous Pro.ttf') format('truetype'); */
+  /* src: url('../fonts/Moon Bold.otf') format('opentype'); */
+
+}
+
+
+
+/* @font-face {
+  font-family: "canter";
+  src: url('Canter Bold 3D.otf') format('opentype');
+} */
+
+/* @font-face {
+  font-family: "parley";
+  src: url('parley bold.ttf') format('truetype');
+} */
+
+
+/* src: url('ruta/carpetas/fuente.eot') format('eot');
+src: url('ruta/carpetas/fuente.eot?#iefix') format('eot'),
+     url('ruta/carpetas/fuente.woff') format('woff'),
+     url('ruta/carpetas/fuente.ttf) format('truetype'),
+     url('ruta/carpetas/fuente.svg) format(svg); */
