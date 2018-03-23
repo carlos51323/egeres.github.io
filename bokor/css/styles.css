@@ -196,8 +196,8 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAHUlEQVQYlW
 
 svg {
   /* position: absolute; */
-  display: block;
-  margin:auto;
+  /* display: block; */
+  /* margin:auto; */
 }
 
 .v-odka {

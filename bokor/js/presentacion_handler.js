@@ -21,7 +21,7 @@ for(var i = 0; i < slides.length; i++)
 
     console.log($(this).prop('nodeName'));
 
-    if ($(this).prop('nodeName') != "TABLE")
+    if ($(this).prop('nodeName') != "TABLE" && $(this).prop('nodeName') != "DIV" && $(this).prop('nodeName') != "IMG")
     {
       big_dictionary[i][index] =  $(this).html();
       $(this).text("");
