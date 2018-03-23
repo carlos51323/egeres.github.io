@@ -76,6 +76,17 @@ p {
   margin-top: 0px;
   margin-bottom:0px;
 }
+
+.smaller_text_t {
+  font-size: 25px;
+  text-align: center;
+
+  margin-left:10px;
+  margin-right:5px;
+  margin-top: 0px;
+  margin-bottom:0px;
+}
+
 td img {
   height: 81%;
   /* width: 90%; */
@@ -83,6 +94,10 @@ td img {
   margin-right: auto; */
 }
 
+.wiid {
+  width:95%;
+  height: auto;
+}
 td {
   text-align: center;
 }
