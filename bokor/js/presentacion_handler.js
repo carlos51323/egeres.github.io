@@ -18,8 +18,15 @@ for(var i = 0; i < slides.length; i++)
   $('#'+"diapo_"+i.toString() + " > div > div > div").children().each(function (index) {
     var nombre_elemento = "diapo_"+i.toString()+"_"+index.toString();
     this.id = nombre_elemento;
-    big_dictionary[i][index] =  $(this).html();
-    $(this).text("");
+
+    console.log($(this).prop('nodeName'));
+
+    if ($(this).prop('nodeName') != "TABLE")
+    {
+      big_dictionary[i][index] =  $(this).html();
+      $(this).text("");
+    }
+
   });
 }
 
