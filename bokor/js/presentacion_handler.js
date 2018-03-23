@@ -127,7 +127,7 @@ function escribir_texto_id(id_input) {
 
         // console.log("4 amigdala = " + amigdala);
 
-        document.getElementById(local_selector).src = amigdala;
+        // document.getElementById(local_selector).src = amigdala;
 
         // console.log("5 amigdala = " + amigdala);
 
